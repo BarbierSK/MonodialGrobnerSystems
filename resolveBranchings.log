@@ -1,0 +1,314 @@
+
+   R2R2=0;
+
+   R2R3=0;
+
+   R3R3crossingCRO=0;
+
+   zigzags=0;
+
+   R2capSliding=0;
+
+   R3capSlidingID=0;
+
+   R3capSlidingBIS=0;
+
+   capSlidingZigzag=0;
+
+   capSlidingCapPulling=0;
+
+   capSlidingCupSlidingID=0;
+
+   capSlidingCupSlidingCRO=0;
+
+   capPullingCupSlidingID=0;
+
+   capPullingCupSlidingCRO=0;
+
+   R2upKink=0;
+
+   R3upKink=0;
+
+   capSlidingDownKink=0;
+
+   upKinkDownKink=0;
+
+   R3R2=0;
+
+   zigzagsVERT=0;
+
+   R2cupSliding=0;
+
+   R3cupSlidingID=0;
+
+   R3cupSlidingBIS=0;
+
+   cupSlidingZigzag=0;
+
+   cupSlidingCupPulling=0;
+
+   capSlidingCupPullingID=0;
+
+   capSlidingCupPullingCRO=0;
+
+   R2downKink=0;
+
+   R3downKink=0;
+
+   cupSlidingUpKink=0;
+
+   R2dotSlideLeft=
+      +dot(1)*cross(1,2)*(-q^-1*alpha^-1*alphaBIS^-1+alpha^-1*alphaBIS^-1*b2BIS+alpha^-1*alphaBIS^-1*b1+q*alpha^-1*alphaBIS^-1)
+      +dot(1)*cup(1,2)*cap(1,2)*(q^-1*alpha^-1*alphaBIS^-1*c1BIS*sigmaBIS^-1-q^-1*alphaBIS^-1*c1BIS-alpha^-1*alphaBIS^-1*b2BIS*c1-alpha^-1*alphaBIS^-1*b2*c1BIS-alpha^-1*alphaBIS^-1*b1*c1BIS*sigmaBIS^-1-alphaBIS^-2*b1BIS*c1BIS-q*alpha^-1*alphaBIS^-1*c1+q*
+         alphaBIS^-1*c1BIS)
+      +dot(1)*(1-q^-1*alphaBIS^-1*b1BIS-alpha^-1*alphaBIS^-1-alpha^-1*alphaBIS^-1*b1*b2BIS-alphaBIS^-2*b1BIS^2+q*alphaBIS^-1*b1BIS)
+      +dot(2)*cross(1,2)*(q^-1*alphaBIS^-1+alpha^-1*alphaBIS^-1*b2+alphaBIS^-2*b1BIS-q*alphaBIS^-1)
+      +dot(2)*(-q^-1*alphaBIS^-1*b2BIS-alpha^-1*alphaBIS^-1*b2*b2BIS-alphaBIS^-2*b1BIS*b2BIS+q*alphaBIS^-1*b2BIS)
+      +cross(1,2)*(alpha^-1*alphaBIS^-1*b+alphaBIS^-1*bBIS)
+      +cup(1,2)*cap(1,2)*dot(1)*(alpha^-1*alphaBIS^-1*b1BIS*c2*sigma^-1-alphaBIS^-2*b1BIS*c2BIS-q*alpha^-1*c2*sigma^-1+q*alphaBIS^-1*c2BIS)
+      +cup(1,2)*cap(1,2)*(-q^-1*alphaBIS^-1*c1BIS*sigmaBIS^-1*tauBIS+alpha^-1*alphaBIS^-1*b2BIS*c2*sigma^-1*tau-alpha^-1*alphaBIS^-1*b2BIS*c+alpha^-1*alphaBIS^-1*bBIS*c2*sigma^-1-alpha^-1*alphaBIS^-1*b2*c1BIS*sigmaBIS^-1*tauBIS-alpha^-1*alphaBIS^-1*b*
+         c1BIS*sigmaBIS^-1-alphaBIS^-2*b1BIS*cBIS+q*alpha^-1*alphaBIS^-1*c2*sigma^-1*tau-q*alpha^-1*alphaBIS^-1*c+q*alphaBIS^-1*cBIS)
+      +cup(1,2)*bubblewithdot(1)*cap(1,2)*(alpha^-1*alphaBIS^-1*c2*c1BIS*sigma^-1-alpha^-1*alphaBIS^-1*c2*c1BIS*sigmaBIS^-1)
+      -q^-1*alphaBIS^-1*bBIS-alpha^-1*alphaBIS^-1*b*b2BIS-alphaBIS^-2*bBIS*b1BIS+q*alphaBIS^-1*bBIS;
+
+   R2dotSlideRight=
+      +dot(1)*cross(1,2)*(q^-1*alpha^-1+alpha^-2*b2+alpha^-1*alphaBIS^-1*b1BIS-q*alpha^-1)
+      +dot(1)*cup(1,2)*cap(1,2)*(q^-1*alpha^-2*c1*sigmaBIS^-1-q^-1*alpha^-1*c1-2*alpha^-2*b2*c1-alpha^-2*b1*c1*sigmaBIS^-1-alpha^-1*alphaBIS^-1*b1*c1BIS-q*alpha^-1*alphaBIS^-1*c1BIS+q*alpha^-1*c1)
+      +dot(1)*(-q^-1*alpha^-1*b1-alpha^-2*b1*b2-alpha^-1*alphaBIS^-1*b1*b1BIS+q*alpha^-1*b1)
+      +dot(2)*cross(1,2)*(-q^-1*alpha^-1*alphaBIS^-1+alpha^-1*alphaBIS^-1*b2BIS+alpha^-1*alphaBIS^-1*b1+q*alpha^-1*alphaBIS^-1)
+      +dot(2)*(1-q^-1*alpha^-1*b2-alpha^-2*b2^2-alpha^-1*alphaBIS^-1-alpha^-1*alphaBIS^-1*b1*b2BIS+q*alpha^-1*b2)
+      +cross(1,2)*(alpha^-1*alphaBIS^-1*bBIS+alpha^-1*b)
+      +cup(1,2)*cap(1,2)*dot(1)*(-alpha^-2*b2*c2+alpha^-1*alphaBIS^-1*b2BIS*c2BIS+alpha^-1*alphaBIS^-1*b1BIS*c2BIS*sigma^-1-alpha^-1*alphaBIS^-1*b1*c2BIS-q*alpha^-1*c2BIS*sigma^-1+q*alpha^-1*c2)
+      +cup(1,2)*cap(1,2)*(-q^-1*alpha^-1*c1*sigmaBIS^-1*tauBIS-alpha^-2*b2*c1*sigmaBIS^-1*tauBIS-alpha^-2*b2*c-alpha^-2*b*c1*sigmaBIS^-1+alpha^-1*alphaBIS^-1*b2BIS*c2BIS*sigma^-1*tau+alpha^-1*alphaBIS^-1*bBIS*c2BIS*sigma^-1-alpha^-1*alphaBIS^-1*b1*cBIS+q
+         *alpha^-1*alphaBIS^-1*c2BIS*sigma^-1*tau-q*alpha^-1*alphaBIS^-1*cBIS+q*alpha^-1*c)
+      +cup(1,2)*bubblewithdot(1)*cap(1,2)*(-alpha^-2*c1*c2*sigmaBIS^-1+alpha^-1*alphaBIS^-1*c1BIS*c2BIS*sigma^-1)
+      -q^-1*alpha^-1*b-alpha^-2*b*b2-alpha^-1*alphaBIS^-1*b1*bBIS+q*alpha^-1*b;
+
+   R3dotSlideRight=
+      +dot(1)*cross(1,2)*(q^-1*alpha^-2*b1-alpha^-2*b1^2-q*alpha^-2*b1)
+      +dot(1)*cross(2,3)*cup(1,2)*cap(1,2)*(alpha^-2*b1*c1)
+      +dot(1)*cross(2,3)*cup(1,2)*cap(2,3)*(q^-1*alpha^-2*c1+alpha^-2*c1^2-q*alpha^-2*c1)
+      +dot(1)*cross(2,3)*(-q^-1*alpha^-2*b1+alpha^-2*b1^2+q*alpha^-2*b1)
+      +dot(1)*cup(1,2)*cap(1,2)*cross(2,3)*(-q^-1*alpha^-2*c1-alpha^-2*c1^2+q*alpha^-2*c1)
+      +dot(1)*cup(1,2)*cap(1,2)*(alpha^-2*b1*c2*c1BIS*sigmaBIS+q*alpha^-2*b1*c1)
+      +dot(1)*cup(1,2)*cap(2,3)*(-q^-2*alpha^-2*c1-q^-1*alpha^-2*c1^2-q^-1*alpha^-2*alphaBIS*b1*c2*sigmaBIS-alpha^-3*b1*c1*c2*sigma^-1+2*alpha^-2*c1-alpha^-2*b1*b1BIS*c2*sigmaBIS+q*alpha^-2*c1^2+q*alpha^-2*alphaBIS*b1*c2*sigmaBIS-q^2*alpha^-2*c1)
+      +dot(1)*cup(2,3)*cap(1,2)*cross(2,3)*(-alpha^-2*b1*c1)
+      +dot(1)*cup(2,3)*cap(1,2)*(-alpha^-2*c2^2*c1BIS*sigmaBIS-alpha^-2*b2*c2*c1BIS)
+      +dot(1)*cup(2,3)*cap(2,3)*(q^-1*alpha^-2*alphaBIS*c2^2*sigmaBIS+q^-1*alpha^-2*alphaBIS*b2*c2+alpha^-3*c1*c2^2*sigma^-1+alpha^-2*b1BIS*c2^2*sigmaBIS+alpha^-2*b2*b1BIS*c2+q*alpha^-2*b1*c1-q*alpha^-2*alphaBIS*c2^2*sigmaBIS-q*alpha^-2*alphaBIS*b2*c2)
+      +dot(2)*cross(2,3)*cup(1,2)*cap(1,2)*(-alpha^-2*c2*c1BIS)
+      +dot(2)*cross(2,3)*cup(1,2)*cap(2,3)*(q^-1*alpha^-2*alphaBIS*c2+alpha^-3*c1*c2*sigma^-1*sigmaBIS^-1+alpha^-2*b1BIS*c2-q*alpha^-2*alphaBIS*c2)
+      +dot(2)*cross(2,3)*(alpha^-2*alphaBIS^-1*b2*b1BIS)
+      +dot(2)*cup(2,3)*cap(1,2)*(-alpha^-2*c1*c2*c1BIS)
+      +dot(2)*cup(2,3)*cap(2,3)*(q^-1*alpha^-3*b2*c1*sigmaBIS^-1+q^-1*alpha^-2*alphaBIS*c1*c2+alpha^-3*c1^2*c2*sigma^-1*sigmaBIS^-1-alpha^-3*b2^2*c1-alpha^-3*b1*b2*c1*sigmaBIS^-1-alpha^-2*alphaBIS^-1*b1*b2*c1BIS+alpha^-2*b1BIS*c1*c2-q*alpha^-2*
+         alphaBIS^-1*b2*c1BIS-q*alpha^-2*alphaBIS*c1*c2)
+      +dot(2)*(-alpha^-2*alphaBIS^-1*b1*b2*b1BIS)
+      +dot(3)*cross(1,2)*(q^-1*alpha^-1*b2+alpha^-2*b2^2-q*alpha^-1*b2)
+      +dot(3)*cross(2,3)*(-q^-1*alpha^-2*alphaBIS^-1*b2+alpha^-2*alphaBIS^-1*b2*b2BIS+alpha^-2*alphaBIS^-1*b1*b2+q*alpha^-2*alphaBIS^-1*b2)
+      +dot(3)*cup(1,2)*cap(1,2)*cross(2,3)*(alpha^-2*alphaBIS^-1*b2*c2-alpha^-2*c1*c2*sigma^-1*sigmaBIS^-1)
+      +dot(3)*cup(1,2)*cap(1,2)*(q^-1*alpha^-1*c2*c1BIS+alpha^-2*alphaBIS^-1*c1*c2*c2BIS+alpha^-2*alphaBIS^-1*c1*c2*c1BIS*sigmaBIS^-2-alpha^-2*alphaBIS^-1*b2*b2BIS*c2+alpha^-2*b2*c2*c1BIS-q*alpha^-2*alphaBIS^-1*c1*c2*sigmaBIS^-1-q*alpha^-1*c2*c1BIS)
+      +dot(3)*cup(1,2)*cap(2,3)*(-q^-2*alpha^-1*alphaBIS*c2-q^-1*alpha^-2*c1*c2*sigma^-1*sigmaBIS^-1-q^-1*alpha^-2*alphaBIS*b2*c2-q^-1*alpha^-1*b1BIS*c2-alpha^-3*b2*c1*c2*sigma^-1*sigmaBIS^-1-alpha^-2*alphaBIS^-1*b2*c2*c1BIS*sigmaBIS^-1-alpha^-2*b2*b1BIS
+         *c2+2*alpha^-1*alphaBIS*c2+q*alpha^-2*c1*c2*sigma^-1*sigmaBIS^-1+q*alpha^-2*alphaBIS*b2*c2+q*alpha^-1*b1BIS*c2-q^2*alpha^-1*alphaBIS*c2)
+      +dot(3)*(-alpha^-2*alphaBIS^-1*b2-alpha^-2*alphaBIS^-1*b1*b2*b2BIS+alpha^-1*b2)
+      +cross(1,2)*(q^-1*alpha^-1*b+alpha^-2*b*b2-alpha^-2*b*b1-q*alpha^-1*b)
+      +cross(2,3)*cross(1,2)*(alpha^-2*b-alpha^-1*b)
+      +cross(2,3)*cup(1,2)*cap(1,2)*dot(1)*(alpha^-2*b1*c2-alpha^-1*c2*c2BIS)
+      +cross(2,3)*cup(1,2)*cap(1,2)*cross(2,3)*dot(1)*(-alpha^-2*c2+alpha^-1*alphaBIS*c2)
+      +cross(2,3)*cup(1,2)*cap(1,2)*cross(2,3)*(-alpha^-2*c+alpha^-1*c)
+      +cross(2,3)*cup(1,2)*cap(1,2)*(alpha^-2*b1*c-alpha^-1*c2*cBIS)
+      +cross(2,3)*cup(1,2)*cap(2,3)*dot(2)*(alpha^-1*b2BIS*c2)
+      +cross(2,3)*cup(1,2)*cap(2,3)*(q^-1*alpha^-1*c-alpha^-2*c1*c2*sigma^-1*sigmaBIS^-1*tauBIS-alpha^-2*c1*c2*sigma^-1*tau+alpha^-2*c*c1+alpha^-1*bBIS*c2-q*alpha^-1*c)
+      +cross(2,3)*(-q^-1*alpha^-2*b+alpha^-2*alphaBIS^-1*b2*bBIS+alpha^-2*b*b1+q*alpha^-2*b)
+      +cup(1,2)*cap(1,2)*dot(1)*(q^-1*alpha^-1*c2*c2BIS-alpha^-2*alphaBIS^-1*b2*b1BIS*c2*sigma-alpha^-2*b1*b2BIS*c2-alpha^-2*b1*b1BIS*c2*sigma^-1-q*alpha^-2*c2^2+q*alpha^-2*alphaBIS*b1*c2*sigma^-1-q*alpha^-1*c2*c2BIS)
+      +cup(1,2)*cap(1,2)*cross(2,3)*dot(1)*(-q^-1*alpha^-1*alphaBIS*c2+alpha^-2*b1*c2+q*alpha^-1*alphaBIS*c2)
+      +cup(1,2)*cap(1,2)*cross(2,3)*(-q^-1*alpha^-1*c+alpha^-2*c1*c2*sigma^-1*sigmaBIS^-1*tauBIS+alpha^-2*c1*c2*sigma^-1*tau-alpha^-2*c*c1+alpha^-2*b*c2+q*alpha^-1*c)
+      +cup(1,2)*cap(1,2)*(q^-1*alpha^-1*c2*cBIS+alpha^-2*alphaBIS^-1*c1*c2*c2BIS*sigmaBIS^-1*tauBIS-alpha^-2*alphaBIS^-1*c1*c2*c1BIS*sigmaBIS^-2*tauBIS+alpha^-2*alphaBIS^-1*c1*c2*cBIS*sigmaBIS^-1-alpha^-2*alphaBIS^-1*b2*b1BIS*c2*tau-alpha^-2*alphaBIS^-1*
+         b2*bBIS*c2+alpha^-2*b1*c2*c1BIS*tauBIS-alpha^-2*b1*b2BIS*c2*sigma^-1*tau-alpha^-2*b1*bBIS*c2*sigma^-1+alpha^-2*b*c2*c1BIS+q*alpha^-2*c1*c2*sigmaBIS^-1*tauBIS-q*alpha^-2*c*c2-q*alpha^-2*b1*c2*sigma^-1*tau+q*alpha^-2*b1*c-q*alpha^-1*c2*cBIS)
+      +cup(1,2)*cap(2,3)*dot(2)*(-q^-1*alpha^-1*b2BIS*c2-alpha^-2*alphaBIS^-1*b2*c2*c2BIS+q*alpha^-1*b2BIS*c2)
+      +cup(1,2)*cap(2,3)*(-q^-2*alpha^-1*c+q^-1*alpha^-2*c1*c2*sigma^-1*sigmaBIS^-1*tauBIS+q^-1*alpha^-2*c1*c2*sigma^-1*tau-q^-1*alpha^-2*c*c1-q^-1*alpha^-2*alphaBIS*b1*c2*tauBIS-q^-1*alpha^-2*alphaBIS*b*c2-q^-1*alpha^-1*bBIS*c2-alpha^-3*b1*c1*c2*
+         sigma^-1*sigmaBIS^-1*tauBIS-alpha^-3*b*c1*c2*sigma^-1*sigmaBIS^-1+alpha^-2*alphaBIS^-1*b2*c2*c1BIS*sigmaBIS^-1*tauBIS-alpha^-2*alphaBIS^-1*b2*c2*cBIS+alpha^-2*c-alpha^-2*b1*b1BIS*c2*tauBIS-alpha^-2*b*b1BIS*c2+alpha^-1*c-q*alpha^-2*c1*c2*sigma^-1
+         *sigmaBIS^-1*tauBIS-q*alpha^-2*c1*c2*sigma^-1*tau+q*alpha^-2*c*c1+q*alpha^-2*alphaBIS*b1*c2*tauBIS+q*alpha^-2*alphaBIS*b*c2+q*alpha^-1*bBIS*c2-q^2*alpha^-1*c)
+      +cup(1,2)*bubblewithdot(1)*cap(1,2)*(-alpha^-2*alphaBIS^-1*b1BIS*c1*c2*sigma*sigmaBIS^-1-alpha^-2*b1*c2*c1BIS*sigma^-1)
+      +cup(2,3)*cap(1,2)*dot(1)*(-alpha^-2*b2*c2*c2BIS)
+      +cup(2,3)*cap(1,2)*cross(2,3)*dot(1)*(alpha^-2*alphaBIS*b2*c2)
+      +cup(2,3)*cap(1,2)*cross(2,3)*(alpha^-2*b2*c-alpha^-2*b*c1)
+      +cup(2,3)*cap(1,2)*(-alpha^-2*c2^2*c1BIS*tauBIS-alpha^-2*c*c2*c1BIS-alpha^-2*b2*c2*cBIS)
+      +cup(2,3)*cap(2,3)*dot(2)*(alpha^-2*alphaBIS^-1*b2*b2BIS*c2BIS+alpha^-2*alphaBIS^-1*b2*b1BIS*c2BIS*sigma^-1-alpha^-2*alphaBIS^-1*b1*b2*c2BIS+alpha^-2*b2*b2BIS*c2-q*alpha^-2*b2*c2BIS*sigma^-1)
+      +cup(2,3)*cap(2,3)*(-q^-1*alpha^-2*b2*c1*sigmaBIS^-1*tauBIS+q^-1*alpha^-2*b2*c+q^-1*alpha^-2*alphaBIS*c2^2*tauBIS+q^-1*alpha^-2*alphaBIS*c*c2+alpha^-3*c1*c2^2*sigma^-1*sigmaBIS^-1*tauBIS+alpha^-3*c*c1*c2*sigma^-1*sigmaBIS^-1-alpha^-3*b2^2*c1*
+         sigmaBIS^-1*tauBIS-alpha^-3*b*b2*c1*sigmaBIS^-1+alpha^-2*alphaBIS^-1*b2*b2BIS*c2BIS*sigma^-1*tau+alpha^-2*alphaBIS^-1*b2*bBIS*c2BIS*sigma^-1-alpha^-2*alphaBIS^-1*b1*b2*cBIS+alpha^-2*b1BIS*c2^2*tauBIS+alpha^-2*b1BIS*c*c2+alpha^-2*b2*bBIS*c2+q*
+         alpha^-2*alphaBIS^-1*b2*c2BIS*sigma^-1*tau-q*alpha^-2*alphaBIS^-1*b2*cBIS-q*alpha^-2*b2*c+q*alpha^-2*b*c1-q*alpha^-2*alphaBIS*c2^2*tauBIS-q*alpha^-2*alphaBIS*c*c2)
+      +cup(2,3)*bubblewithdot(2)*cap(2,3)*(-alpha^-3*b2*c1*c2*sigmaBIS^-1+alpha^-2*alphaBIS^-1*b2*c1BIS*c2BIS*sigma^-1)
+      -alpha^-2*alphaBIS^-1*b1*b2*bBIS-alpha^-2*b+alpha^-1*b;
+
+   R3dotSlideCenter=
+      +dot(1)*cross(1,2)*(-alpha^-2*alphaBIS^-1*b2*b1BIS)
+      +dot(1)*cross(2,3)*cup(1,2)*cap(2,3)*(-alpha^-2*alphaBIS^-1*b2*c1BIS+alpha^-1*alphaBIS^-1*c1*c1BIS)
+      +dot(1)*cup(1,2)*cap(1,2)*cross(2,3)*(-alpha^-1*alphaBIS^-1*b1*c1BIS)
+      +dot(1)*cup(1,2)*cap(1,2)*(alpha^-2*alphaBIS^-1*b2*b1BIS*c1+alpha^-1*alphaBIS^-1*c1*sigmaBIS+q*alpha^-1*alphaBIS^-1*c1*c1BIS-q^2*alpha^-1*alphaBIS^-1*c1*sigmaBIS)
+      +dot(1)*cup(1,2)*cap(2,3)*(q^-1*alpha^-2*alphaBIS^-1*b2*c1BIS+alpha^-2*alphaBIS^-1*b2*c1*c1BIS-alpha^-2*alphaBIS^-1*b1*c2*c1BIS*sigma^-1-q*alpha^-2*alphaBIS^-1*b2*c1BIS)
+      +dot(1)*cup(2,3)*cap(1,2)*cross(2,3)*(alpha^-1*alphaBIS^-1*c2*c1BIS)
+      +dot(1)*cup(2,3)*cap(1,2)*(-alpha^-1*alphaBIS^-1*b2BIS*c2*c1BIS)
+      +dot(1)*cup(2,3)*cap(2,3)*(q^-1*alpha^-1*alphaBIS^-1*b1*c1BIS+q^-1*alpha^-1*b2BIS*c2+alpha^-2*alphaBIS^-1*c2^2*c1BIS*sigma^-1+alpha^-2*alphaBIS^-1*b1*b2*c1BIS+alpha^-1*alphaBIS^-1*b1BIS*b2BIS*c2+alpha^-1*c2+q*alpha^-1*alphaBIS^-1*b1BIS*c2-q*
+         alpha^-1*b2BIS*c2-q^2*alpha^-1*c2)
+      +dot(1)*(alpha^-2*alphaBIS^-1*b1*b2*b1BIS)
+      +dot(2)*cross(1,2)*(alpha^-1*alphaBIS^-1*b1*b2BIS)
+      +dot(2)*cross(2,3)*cup(1,2)*cap(1,2)*(q^-1*alpha^-1*alphaBIS^-1*c1-alpha^-1*alphaBIS^-1*b2BIS*c1-q*alpha^-1*alphaBIS^-1*c1)
+      +dot(2)*cross(2,3)*cup(1,2)*cap(2,3)*(alpha^-2*alphaBIS^-1*c2*c1BIS*sigma^-1*sigmaBIS^-1)
+      +dot(2)*cross(2,3)*(-alpha^-1*alphaBIS^-1*b1*b2BIS)
+      +dot(2)*cup(2,3)*cap(1,2)*cross(2,3)*(-q^-1*alpha^-1*alphaBIS^-1*c1+alpha^-1*alphaBIS^-1*b2BIS*c1+q*alpha^-1*alphaBIS^-1*c1)
+      +dot(2)*cup(2,3)*cap(2,3)*(q^-1*alpha^-2*alphaBIS^-1*b2*c1BIS*sigmaBIS^-1+q^-1*alpha^-1*alphaBIS^-1*b2BIS*c1+alpha^-2*alphaBIS^-1*c1*c2*c1BIS*sigma^-1*sigmaBIS^-1-alpha^-2*alphaBIS^-1*b1*b2*c1BIS*sigmaBIS^-1-alpha^-1*alphaBIS^-2*b2*b1BIS*c1BIS+
+         alpha^-1*alphaBIS^-1*c1-q*alpha^-1*alphaBIS^-1*b2BIS*c1-q^2*alpha^-1*alphaBIS^-1*c1)
+      +dot(2)*(alpha^-2*alphaBIS^-1*b2^2*b1BIS-alpha^-1*alphaBIS^-2*b2*b1BIS^2)
+      +dot(3)*cross(2,3)*(alpha^-1*alphaBIS^-2*b2*b1BIS)
+      +dot(3)*cup(1,2)*cap(1,2)*cross(2,3)*(alpha^-1*alphaBIS^-2*b2*c2BIS)
+      +dot(3)*cup(1,2)*cap(1,2)*(-alpha^-1*alphaBIS^-2*b2*b2BIS*c2BIS)
+      +dot(3)*cup(1,2)*cap(2,3)*(-alpha^-1*alphaBIS^-2*b2*c1BIS*c2BIS*sigmaBIS^-1)
+      +dot(3)*(-alpha^-1*alphaBIS^-2*b2*b1BIS*b2BIS)
+      +cross(1,2)*cross(2,3)*(-alpha^-1*alphaBIS^-1*b+alpha^-1*b)
+      +cross(1,2)*(-alpha^-1*alphaBIS^-1*b2*bBIS+alpha^-1*alphaBIS^-1*b*b2BIS)
+      +cross(2,3)*cross(1,2)*(alpha^-1*alphaBIS^-1*bBIS-alphaBIS^-1*bBIS)
+      +cross(2,3)*cup(1,2)*cap(1,2)*dot(1)*(q^-1*alpha^-1*c2+alpha^-1*alphaBIS^-1*b1BIS*c2-q*alpha^-1*c2)
+      +cross(2,3)*cup(1,2)*cap(1,2)*(q^-1*alpha^-1*c+alpha^-1*alphaBIS^-1*b1BIS*c-alpha^-1*alphaBIS^-1*bBIS*c1-q*alpha^-1*c)
+      +cross(2,3)*cup(1,2)*cap(2,3)*dot(2)*(-alpha^-1*alphaBIS^-1*b2*c2BIS)
+      +cross(2,3)*cup(1,2)*cap(2,3)*(-alpha^-1*alphaBIS^-1*c2*c1BIS*sigma^-1*sigmaBIS^-1*tauBIS-alpha^-1*alphaBIS^-1*c2*c1BIS*sigma^-1*tau+alpha^-1*alphaBIS^-1*c*c1BIS-alpha^-1*alphaBIS^-1*b2*cBIS)
+      +cross(2,3)*(-alpha^-1*alphaBIS^-1*b1*bBIS+alpha^-1*alphaBIS^-1*b*b1BIS)
+      +cup(1,2)*cap(1,2)*dot(1)*(alpha^-2*alphaBIS^-1*b2*b1BIS*c2-alpha^-1*alphaBIS^-2*b2*b1BIS*c2BIS*sigma+alpha^-1*c2-q*alpha^-1*alphaBIS^-1*c2*c2BIS-q^2*alpha^-1*c2)
+      +cup(1,2)*cap(1,2)*cross(2,3)*(-alpha^-1*alphaBIS^-1*b1*cBIS+alpha^-1*alphaBIS^-1*b*c2BIS)
+      +cup(1,2)*cap(1,2)*(alpha^-2*alphaBIS^-1*b2*b1BIS*c-alpha^-1*alphaBIS^-2*b2*b1BIS*c2BIS*tau-alpha^-1*alphaBIS^-2*b2*bBIS*c2BIS+alpha^-1*alphaBIS^-1*c1*tauBIS+alpha^-1*c+q*alpha^-1*alphaBIS^-1*c1*cBIS-q*alpha^-1*alphaBIS^-1*c*c2BIS-q^2*alpha^-1*
+         alphaBIS^-1*c1*tauBIS-q^2*alpha^-1*c)
+      +cup(1,2)*cap(2,3)*dot(2)*(q^-1*alpha^-1*alphaBIS^-1*b2*c2BIS-alpha^-1*alphaBIS^-2*b2*c2BIS^2-q*alpha^-1*alphaBIS^-1*b2*c2BIS)
+      +cup(1,2)*cap(2,3)*(q^-1*alpha^-1*alphaBIS^-1*b2*cBIS-alpha^-2*alphaBIS^-1*b2*c2*c1BIS*sigma^-1*sigmaBIS^-1*tauBIS-alpha^-2*alphaBIS^-1*b2*c2*c1BIS*sigma^-1*tau+alpha^-2*alphaBIS^-1*b2*c*c1BIS-alpha^-2*alphaBIS^-1*b1*c2*c1BIS*sigma^-1*sigmaBIS^-1*
+         tauBIS-alpha^-2*alphaBIS^-1*b*c2*c1BIS*sigma^-1*sigmaBIS^-1+alpha^-1*alphaBIS^-2*b2*c1BIS*c2BIS*sigmaBIS^-1*tauBIS-alpha^-1*alphaBIS^-2*b2*cBIS*c2BIS+alpha^-1*alphaBIS^-1*cBIS-alphaBIS^-1*cBIS-q*alpha^-1*alphaBIS^-1*b2*cBIS)
+      +cup(2,3)*cap(1,2)*dot(1)*(-alpha^-1*alphaBIS^-1*b2BIS*c2*c2BIS)
+      +cup(2,3)*cap(1,2)*cross(2,3)*dot(1)*(-q^-1*alpha^-1*c2+alpha^-1*alphaBIS^-1*c2*c2BIS+alpha^-1*b2BIS*c2+q*alpha^-1*c2)
+      +cup(2,3)*cap(1,2)*cross(2,3)*(-q^-1*alpha^-1*alphaBIS^-1*c+alpha^-1*alphaBIS^-1*c2*cBIS+alpha^-1*alphaBIS^-1*b2BIS*c+q*alpha^-1*alphaBIS^-1*c)
+      +cup(2,3)*cap(1,2)*(-alpha^-1*alphaBIS^-1*c-alpha^-1*alphaBIS^-1*b2BIS*c2*cBIS+alpha^-1*c)
+      +cup(2,3)*cap(2,3)*dot(2)*(-alpha^-1*alphaBIS^-2*b2*b1BIS*c2BIS-alpha^-1*alphaBIS^-1*b1BIS*b2BIS*c2*sigma^-1+q*alpha^-1*b2BIS*c2*sigma^-1)
+      +cup(2,3)*cap(2,3)*(q^-1*alpha^-1*alphaBIS^-1*b2BIS*c-q^-1*alpha^-1*alphaBIS^-1*b2*c1BIS*sigmaBIS^-1*tauBIS+q^-1*alpha^-1*alphaBIS^-1*b*c1BIS+alpha^-2*alphaBIS^-1*c2^2*c1BIS*sigma^-1*sigmaBIS^-1*tauBIS+alpha^-2*alphaBIS^-1*c*c2*c1BIS*sigma^-1*
+         sigmaBIS^-1-alpha^-2*alphaBIS^-1*b2^2*c1BIS*sigmaBIS^-1*tauBIS-alpha^-2*alphaBIS^-1*b*b2*c1BIS*sigmaBIS^-1+alpha^-2*alphaBIS^-1*b*b2*c1BIS-alpha^-1*alphaBIS^-2*b2*b1BIS*cBIS+alpha^-1*alphaBIS^-1*c-alpha^-1*alphaBIS^-1*b2BIS^2*c2*sigma^-1*tau-
+         alpha^-1*alphaBIS^-1*bBIS*b2BIS*c2*sigma^-1+alpha^-1*alphaBIS^-1*bBIS*b2BIS*c2-q*alpha^-1*alphaBIS^-1*b2BIS*c2*sigma^-1*tau-q*alpha^-1*alphaBIS^-1*b2BIS*c+q*alpha^-1*alphaBIS^-1*bBIS*c2-q^2*alpha^-1*alphaBIS^-1*c)
+      +cup(2,3)*bubblewithdot(2)*cap(2,3)*(-alpha^-2*alphaBIS^-1*b2*c2*c1BIS*sigmaBIS^-1-alpha^-1*alphaBIS^-1*b2BIS*c2*c1BIS*sigma^-1)
+      +alpha^-2*alphaBIS^-1*b*b2*b1BIS-alpha^-1*alphaBIS^-2*b2*bBIS*b1BIS;
+
+   R3dotSlideLeft=
+      +dot(1)*cross(1,2)*(q^-1*alpha^-1*alphaBIS^-2*b1BIS-alpha^-1*alphaBIS^-2*b1BIS*b2BIS-alpha^-1*alphaBIS^-2*b1*b1BIS-q*alpha^-1*alphaBIS^-2*b1BIS)
+      +dot(1)*cross(2,3)*cup(1,2)*cap(1,2)*cross(2,3)*(alpha^-1*alphaBIS^-2*c1BIS-alphaBIS^-1*c1BIS)
+      +dot(1)*cross(2,3)*cup(1,2)*cap(1,2)*(-alphaBIS^-2*b1BIS*c1BIS)
+      +dot(1)*cross(2,3)*cup(1,2)*cap(2,3)*(q^-1*alpha^-1*alphaBIS^-2*c1BIS-alpha^-1*alphaBIS^-2*b2BIS*c1BIS-q*alpha^-1*alphaBIS^-2*c1BIS)
+      +dot(1)*cross(2,3)*(-q^-1*alphaBIS^-1*b1BIS-alphaBIS^-2*b1BIS^2+q*alphaBIS^-1*b1BIS)
+      +dot(1)*cup(1,2)*cap(1,2)*cross(2,3)*(-q^-1*alpha^-1*alphaBIS^-2*c1BIS-alpha^-1*alphaBIS^-2*c1*c1BIS-alphaBIS^-2*b1BIS*c1BIS+q*alpha^-1*alphaBIS^-2*c1BIS)
+      +dot(1)*cup(1,2)*cap(1,2)*(alpha^-1*alphaBIS^-2*b1BIS*b2BIS*c1+alpha^-1*alphaBIS^-2*b1*c1BIS*c2BIS*sigmaBIS+alphaBIS^-2*c1BIS*sigmaBIS+q*alpha^-1*alphaBIS^-2*b1BIS*c1+q*alphaBIS^-2*c1BIS^2-q^2*alphaBIS^-2*c1BIS*sigmaBIS)
+      +dot(1)*cup(1,2)*cap(2,3)*(-q^-2*alpha^-1*alphaBIS^-2*c1BIS-q^-1*alpha^-1*alphaBIS^-2*c1*c1BIS+q^-1*alpha^-1*alphaBIS^-2*b2BIS*c1BIS-q^-1*alpha^-1*alphaBIS^-1*b1*c2BIS*sigmaBIS+2*alpha^-1*alphaBIS^-2*c1BIS+alpha^-1*alphaBIS^-2*b2BIS*c1*c1BIS-
+         alpha^-1*alphaBIS^-2*b1*b1BIS*c2BIS*sigmaBIS+q*alpha^-1*alphaBIS^-2*c1*c1BIS-q*alpha^-1*alphaBIS^-2*b2BIS*c1BIS+q*alpha^-1*alphaBIS^-1*b1*c2BIS*sigmaBIS-q^2*alpha^-1*alphaBIS^-2*c1BIS)
+      +dot(1)*cup(2,3)*cap(1,2)*cross(2,3)*(-alpha^-1*alphaBIS^-2*b1*c1BIS+alphaBIS^-2*c1BIS*c2BIS)
+      +dot(1)*cup(2,3)*cap(1,2)*(-alpha^-1*alphaBIS^-2*c2*c1BIS*c2BIS*sigmaBIS)
+      +dot(1)*cup(2,3)*cap(2,3)*(-q^-1*alpha^-1*alphaBIS^-2*b1*c1BIS+q^-1*alpha^-1*alphaBIS^-1*c2*c2BIS*sigmaBIS+alpha^-1*alphaBIS^-2*b1BIS*c2*c2BIS*sigmaBIS+alpha^-1*alphaBIS^-2*b1*b2BIS*c1BIS+alphaBIS^-1*c2BIS+q*alpha^-1*alphaBIS^-2*b1*c1BIS-q*alpha^-1
+         *alphaBIS^-1*c2*c2BIS*sigmaBIS+q*alphaBIS^-2*b1BIS*c2BIS-q^2*alphaBIS^-1*c2BIS)
+      +dot(1)*(alpha^-1*alphaBIS^-2*b1BIS+alpha^-1*alphaBIS^-2*b1*b1BIS*b2BIS-alphaBIS^-1*b1BIS)
+      +dot(2)*cross(1,2)*(-alpha^-1*alphaBIS^-2*b2*b1BIS)
+      +dot(2)*cross(2,3)*cup(1,2)*cap(1,2)*(q^-1*alphaBIS^-2*c1BIS-alpha^-1*alphaBIS^-2*c1BIS*c2BIS-alphaBIS^-2*b2BIS*c1BIS-q*alphaBIS^-2*c1BIS)
+      +dot(2)*cross(2,3)*cup(1,2)*cap(2,3)*(q^-1*alpha^-1*alphaBIS^-1*c2BIS+alpha^-1*alphaBIS^-2*b1BIS*c2BIS-q*alpha^-1*alphaBIS^-1*c2BIS)
+      +dot(2)*cup(2,3)*cap(1,2)*cross(2,3)*(-q^-1*alphaBIS^-2*c1BIS-alpha^-1*alphaBIS^-2*b2*c1BIS+q*alphaBIS^-2*c1BIS)
+      +dot(2)*cup(2,3)*cap(1,2)*(-alpha^-1*alphaBIS^-2*c1*c1BIS*c2BIS)
+      +dot(2)*cup(2,3)*cap(2,3)*(-q^-1*alpha^-1*alphaBIS^-2*b2*c1BIS+q^-1*alpha^-1*alphaBIS^-1*c1*c2BIS+alpha^-1*alphaBIS^-2*b1BIS*c1*c2BIS+alpha^-1*alphaBIS^-2*b2*b2BIS*c1BIS+alphaBIS^-2*c1BIS+q*alpha^-1*alphaBIS^-2*b2*c1BIS-q*alpha^-1*alphaBIS^-1*c1*
+         c2BIS-q*alphaBIS^-2*b2BIS*c1BIS-q^2*alphaBIS^-2*c1BIS)
+      +dot(2)*(alpha^-1*alphaBIS^-2*b2*b1BIS*b2BIS)
+      +dot(3)*cross(1,2)*(q^-1*alphaBIS^-2*b2BIS-alphaBIS^-2*b2BIS^2-q*alphaBIS^-2*b2BIS)
+      +dot(3)*cross(2,3)*(-q^-1*alphaBIS^-2*b2BIS+alphaBIS^-2*b2BIS^2+q*alphaBIS^-2*b2BIS)
+      +dot(3)*cup(1,2)*cap(1,2)*cross(2,3)*(-alpha^-1*alphaBIS^-2*c2*c1BIS*sigma^-1*sigmaBIS^-1)
+      +dot(3)*cup(1,2)*cap(1,2)*(q^-1*alphaBIS^-2*c1BIS*c2BIS+alpha^-1*alphaBIS^-2*b2*c1BIS*c2BIS-alphaBIS^-3*c1BIS*c2BIS^2-alphaBIS^-3*c1BIS^2*c2BIS*sigmaBIS^-2+q*alphaBIS^-3*c1BIS*c2BIS*sigmaBIS^-1-q*alphaBIS^-2*c1BIS*c2BIS)
+      +dot(3)*cup(1,2)*cap(2,3)*(-q^-2*alphaBIS^-1*c2BIS-q^-1*alpha^-1*alphaBIS^-2*c2*c1BIS*sigma^-1*sigmaBIS^-1-q^-1*alpha^-1*alphaBIS^-1*b2*c2BIS-q^-1*alphaBIS^-2*b1BIS*c2BIS+alpha^-1*alphaBIS^-2*b2BIS*c2*c1BIS*sigma^-1*sigmaBIS^-1-alpha^-1*alphaBIS^-2
+         *b2*b1BIS*c2BIS+2*alphaBIS^-1*c2BIS+q*alpha^-1*alphaBIS^-2*c2*c1BIS*sigma^-1*sigmaBIS^-1+q*alpha^-1*alphaBIS^-1*b2*c2BIS+q*alphaBIS^-2*b1BIS*c2BIS-q^2*alphaBIS^-1*c2BIS)
+      +cross(1,2)*cross(2,3)*(-alphaBIS^-2*bBIS+alphaBIS^-1*bBIS)
+      +cross(1,2)*(q^-1*alphaBIS^-2*bBIS-alpha^-1*alphaBIS^-2*b*b1BIS-alphaBIS^-2*bBIS*b2BIS-q*alphaBIS^-2*bBIS)
+      +cross(2,3)*cup(1,2)*cap(1,2)*dot(1)*(q^-1*alphaBIS^-1*c2BIS-alphaBIS^-2*c2BIS^2-q*alphaBIS^-1*c2BIS)
+      +cross(2,3)*cup(1,2)*cap(1,2)*cross(2,3)*(alphaBIS^-2*cBIS-alphaBIS^-1*cBIS)
+      +cross(2,3)*cup(1,2)*cap(1,2)*(q^-1*alphaBIS^-1*cBIS-alphaBIS^-2*cBIS*c2BIS-alphaBIS^-2*bBIS*c1BIS-q*alphaBIS^-1*cBIS)
+      +cross(2,3)*cup(1,2)*cap(2,3)*(q^-1*alphaBIS^-2*cBIS-alphaBIS^-2*b2BIS*cBIS+alphaBIS^-2*bBIS*c2BIS-q*alphaBIS^-2*cBIS)
+      +cross(2,3)*(-q^-1*alphaBIS^-1*bBIS+alphaBIS^-2*bBIS*b2BIS-alphaBIS^-2*bBIS*b1BIS+q*alphaBIS^-1*bBIS)
+      +cup(1,2)*cap(1,2)*dot(1)*(q^-1*alphaBIS^-2*c2BIS^2-alpha^-1*alphaBIS^-2*b1BIS^2*c2*sigma^-1+alphaBIS^-1*c2BIS+q*alpha^-1*alphaBIS^-1*b1BIS*c2*sigma^-1-q*alphaBIS^-2*c2BIS^2-q^2*alphaBIS^-1*c2BIS)
+      +cup(1,2)*cap(1,2)*cross(2,3)*dot(1)*(-q^-1*alphaBIS^-1*c2BIS-alphaBIS^-2*b1BIS*c2BIS+q*alphaBIS^-1*c2BIS)
+      +cup(1,2)*cap(1,2)*cross(2,3)*(-q^-1*alphaBIS^-2*cBIS+alpha^-1*alphaBIS^-2*c2*c1BIS*sigma^-1*sigmaBIS^-1*tauBIS+alpha^-1*alphaBIS^-2*c2*c1BIS*sigma^-1*tau-alpha^-1*alphaBIS^-2*c*c1BIS-alphaBIS^-2*b1BIS*cBIS+q*alphaBIS^-2*cBIS)
+      +cup(1,2)*cap(1,2)*(q^-1*alphaBIS^-2*cBIS*c2BIS-alpha^-1*alphaBIS^-2*b1BIS*b2BIS*c2*sigma^-1*tau+alpha^-1*alphaBIS^-2*b1BIS*b2BIS*c-alpha^-1*alphaBIS^-2*bBIS*b1BIS*c2*sigma^-1+alpha^-1*alphaBIS^-2*b1*c1BIS*c2BIS*tauBIS+alpha^-1*alphaBIS^-2*b*c1BIS*
+         c2BIS-alphaBIS^-3*c1BIS*c2BIS^2*sigmaBIS^-1*tauBIS+alphaBIS^-3*c1BIS^2*c2BIS*sigmaBIS^-2*tauBIS-alphaBIS^-3*cBIS*c1BIS*c2BIS*sigmaBIS^-1+alphaBIS^-2*c1BIS*tauBIS+alphaBIS^-1*cBIS-q*alpha^-1*alphaBIS^-2*b1BIS*c2*sigma^-1*tau+q*alpha^-1*
+         alphaBIS^-2*b1BIS*c-q*alphaBIS^-2*c1BIS*c2BIS*sigmaBIS^-1*tauBIS-q*alphaBIS^-2*cBIS*c2BIS+q*alphaBIS^-2*cBIS*c1BIS-q^2*alphaBIS^-2*c1BIS*tauBIS-q^2*alphaBIS^-1*cBIS)
+      +cup(1,2)*cap(2,3)*(-q^-2*alphaBIS^-2*cBIS+q^-1*alpha^-1*alphaBIS^-2*c2*c1BIS*sigma^-1*sigmaBIS^-1*tauBIS+q^-1*alpha^-1*alphaBIS^-2*c2*c1BIS*sigma^-1*tau-q^-1*alpha^-1*alphaBIS^-2*c*c1BIS-q^-1*alpha^-1*alphaBIS^-1*b1*c2BIS*tauBIS-q^-1*alpha^-1*
+         alphaBIS^-1*b*c2BIS+q^-1*alphaBIS^-2*b2BIS*cBIS-q^-1*alphaBIS^-2*bBIS*c2BIS-alpha^-1*alphaBIS^-2*b2BIS*c2*c1BIS*sigma^-1*sigmaBIS^-1*tauBIS-alpha^-1*alphaBIS^-2*b2BIS*c2*c1BIS*sigma^-1*tau+alpha^-1*alphaBIS^-2*b2BIS*c*c1BIS-alpha^-1*alphaBIS^-2*
+         b1*b1BIS*c2BIS*tauBIS-alpha^-1*alphaBIS^-2*b*b1BIS*c2BIS+2*alphaBIS^-2*cBIS-q*alpha^-1*alphaBIS^-2*c2*c1BIS*sigma^-1*sigmaBIS^-1*tauBIS-q*alpha^-1*alphaBIS^-2*c2*c1BIS*sigma^-1*tau+q*alpha^-1*alphaBIS^-2*c*c1BIS+q*alpha^-1*alphaBIS^-1*b1*c2BIS*
+         tauBIS+q*alpha^-1*alphaBIS^-1*b*c2BIS-q*alphaBIS^-2*b2BIS*cBIS+q*alphaBIS^-2*bBIS*c2BIS-q^2*alphaBIS^-2*cBIS)
+      +cup(1,2)*bubblewithdot(1)*cap(1,2)*(-alpha^-1*alphaBIS^-2*b1BIS*c2*c1BIS*sigma^-1+alphaBIS^-3*b1BIS*c1BIS*c2BIS*sigma*sigmaBIS^-1)
+      +cup(2,3)*cap(1,2)*cross(2,3)*dot(1)*(-q^-1*alphaBIS^-1*c2BIS+alphaBIS^-2*c2BIS^2+q*alphaBIS^-1*c2BIS)
+      +cup(2,3)*cap(1,2)*cross(2,3)*(-q^-1*alphaBIS^-2*cBIS-alpha^-1*alphaBIS^-2*b*c1BIS+alphaBIS^-2*cBIS*c2BIS+q*alphaBIS^-2*cBIS)
+      +cup(2,3)*cap(1,2)*(-alpha^-1*alphaBIS^-2*c2*c1BIS*c2BIS*tauBIS-alpha^-1*alphaBIS^-2*c*c1BIS*c2BIS-alphaBIS^-2*cBIS+alphaBIS^-1*cBIS)
+      +cup(2,3)*cap(2,3)*(-q^-1*alpha^-1*alphaBIS^-2*b*c1BIS+q^-1*alpha^-1*alphaBIS^-1*c2*c2BIS*tauBIS+q^-1*alpha^-1*alphaBIS^-1*c*c2BIS+alpha^-1*alphaBIS^-2*b1BIS*c2*c2BIS*tauBIS+alpha^-1*alphaBIS^-2*b1BIS*c*c2BIS+alpha^-1*alphaBIS^-2*b*b2BIS*c1BIS+
+         alphaBIS^-2*cBIS+q*alpha^-1*alphaBIS^-2*b*c1BIS-q*alpha^-1*alphaBIS^-1*c2*c2BIS*tauBIS-q*alpha^-1*alphaBIS^-1*c*c2BIS-q*alphaBIS^-2*b2BIS*cBIS+q*alphaBIS^-2*bBIS*c2BIS-q^2*alphaBIS^-2*cBIS)
+      +alpha^-1*alphaBIS^-2*b*b1BIS*b2BIS+alphaBIS^-2*bBIS-alphaBIS^-1*bBIS;
+
+   ZigzagDotSlide=
+      +dot(1)*(1-sigma^-1*sigmaBIS^-1)
+      +interchangerule(cap,dot)*sigma^-1*sigmaBIS^-1*tauBIS+interchangerule(cap,dot)*sigma^-1*tau;
+
+   dotSlideDotSlide=
+      +dot(1)*dot(1)*cup(1,2)*cap(1,2)*(interchangerule(dot,dot)*alpha^-1*alphaBIS^-1*c1BIS-interchangerule(dot,dot)*alpha^-1*alphaBIS^-1*c1*sigmaBIS)
+      +dot(1)*dot(1)*(interchangerule(dot,dot)*alpha^-1*alphaBIS^-1*b1BIS+interchangerule(dot,dot)*alpha^-1*b1)
+      +dot(1)*dot(2)*(alpha^-1*b2-alphaBIS^-1*b1BIS+interchangerule(dot,dot)*alpha^-1*alphaBIS^-1*b2BIS-interchangerule(dot,dot)*alpha^-1*alphaBIS^-1*b1)
+      +dot(1)*cup(1,2)*cap(1,2)*dot(1)*(-alpha^-1*alphaBIS^-1*c2*sigmaBIS-alphaBIS^-1*c1BIS*sigma+interchangerule(dot,dot)*alpha^-1*alphaBIS^-1*c2BIS+interchangerule(dot,dot)*alpha^-1*c1)
+      +dot(1)*cup(1,2)*cap(1,2)*(-alpha^-1*alphaBIS^-1*c*sigmaBIS-alphaBIS^-1*c1BIS*tau+interchangerule(dot,dot)*alpha^-1*alphaBIS^-1*cBIS-interchangerule(dot,dot)*alpha^-1*alphaBIS^-1*c1*tauBIS)
+      +dot(1)*(interchangerule(dot,dot)*alpha^-1*alphaBIS^-1*bBIS+interchangerule(dot,dot)*alpha^-1*b)
+      +dot(2)*dot(2)*(-alpha^-1*alphaBIS^-1*b2-alphaBIS^-1*b2BIS)
+      +dot(2)*(-alpha^-1*alphaBIS^-1*b-alphaBIS^-1*bBIS)
+      +cup(1,2)*cap(1,2)*dot(1)*dot(1)*(interchangerule(dot,dot)*alpha^-1*c2-interchangerule(dot,dot)*alphaBIS^-1*c2BIS*sigma)
+      +cup(1,2)*cap(1,2)*dot(1)*(-alpha^-1*alphaBIS^-1*c2*tauBIS-alphaBIS^-1*cBIS*sigma+interchangerule(dot,dot)*alpha^-1*c-interchangerule(dot,dot)*alphaBIS^-1*c2BIS*tau)
+      +cup(1,2)*cap(1,2)*(-alpha^-1*alphaBIS^-1*c*tauBIS-alphaBIS^-1*cBIS*tau);
+
+   UpwardKinkDotSlide=
+      +cap(1,2)*dot(1)*(-alpha^-1*b2BIS-alpha^-1*b1BIS*sigma^-1+alpha^-1*b2*sigma+alpha^-1*b1+q*alpha^-1*alphaBIS*sigma^-1-q*sigma)
+      +cap(1,2)*(-alpha^-1*b2BIS*sigma^-1*tau-alpha^-1*bBIS*sigma^-1+alpha^-1*b2*tau+alpha^-1*b-q*alpha^-1*sigma^-1*tau-q*tau)
+      +bubblewithdot(1)*cap(1,2)*(-alpha^-1*c1BIS*sigma^-1+alpha^-1*c1);
+
+   CapSlidingDotSlideCenter=
+      +dot(1)*cap(1,2)*cross(2,3)*(-interchangerule(cup,dot)*alpha^-1+interchangerule(cup,dot)*alphaBIS^-1)
+      +dot(1)*cap(1,2)*(-interchangerule(cup,dot)*alpha^-1*c1-interchangerule(cup,dot)*alphaBIS^-1*b2BIS)
+      +dot(1)*cap(2,3)*(-interchangerule(cup,dot)*q^-1*alpha^-1+interchangerule(cup,dot)*alpha^-1*b1-interchangerule(cup,dot)*alphaBIS^-1*c1BIS*sigmaBIS^-1+interchangerule(cup,dot)*q*alpha^-1)
+      +cap(1,2)*dot(1)*(-alpha^-1*c2-alphaBIS^-1*b1BIS*sigma)
+      +cap(1,2)*(-alpha^-1*c-alphaBIS^-1*b1BIS*tau-alphaBIS^-1*bBIS)
+      +cap(2,3)*dot(2)*(q^-1+alpha^-1*b2-alphaBIS^-1*c2BIS-q)
+      +cap(2,3)*(alpha^-1*b+alphaBIS^-1*c1BIS*sigmaBIS^-1*tauBIS-alphaBIS^-1*cBIS);
+
+   CapSlidingDotSlideRight=
+      +dot(1)*cap(1,2)*(-interchangerule(cup,dot)*alpha^-1*b2+interchangerule(cup,dot)*c1BIS*sigma)
+      +dot(1)*cap(2,3)*(-interchangerule(cup,dot)*q^-1*alphaBIS*sigma-interchangerule(cup,dot)*alpha^-1*c1*sigmaBIS^-1-interchangerule(cup,dot)*b1BIS*sigma+interchangerule(cup,dot)*q*alphaBIS*sigma)
+      +cap(1,2)*dot(1)*(-alpha^-1*b1*sigma+c2BIS*sigma)
+      +cap(1,2)*cross(2,3)*dot(1)*(alpha^-1*sigma-alphaBIS*sigma)
+      +cap(1,2)*cross(2,3)*(alpha^-1*tau-tau)
+      +cap(1,2)*(-alpha^-1*b1*tau-alpha^-1*b+cBIS*sigma)
+      +cap(2,3)*dot(2)*(q^-1*sigma-alpha^-1*c2-b2BIS*sigma-q*sigma)
+      +cap(2,3)*(alpha^-1*c1*sigmaBIS^-1*tauBIS-alpha^-1*c-bBIS*sigma);
+
+   ZagzigDotSlide=
+      +dot(1)*(-1+sigma*sigmaBIS)
+      +interchangerule(cap,dot)*tau+interchangerule(cap,dot)*sigma*tauBIS;
+
+   DownwardKinkDotSlide=
+      +dot(1)*cup(1,2)*(q^-1*alpha^-1*alphaBIS*sigmaBIS^-1-q^-1*sigmaBIS-alpha^-1*alphaBIS*b2-alpha^-1*alphaBIS*b1*sigmaBIS^-1+b2BIS*sigmaBIS+b1BIS)
+      +cup(1,2)*bubblewithdot(1)*(-alpha^-1*alphaBIS*c2*sigmaBIS^-1+c2BIS)
+      +cup(1,2)*(-q^-1*tauBIS-q^-1*alphaBIS*sigmaBIS^-1*tauBIS-alpha^-1*alphaBIS*b2*sigmaBIS^-1*tauBIS-alpha^-1*alphaBIS*b*sigmaBIS^-1+b2BIS*tauBIS+bBIS);
+
+   CupSlidingDotSlideRight=
+      +dot(1)*cross(2,3)*cup(1,2)*(-alpha^-1*sigmaBIS+alphaBIS*sigmaBIS)
+      +dot(1)*cup(1,2)*(q^-1*alpha^-1*sigmaBIS+alpha^-1*c1*sigmaBIS+b1BIS*sigmaBIS-q*alpha^-1*sigmaBIS)
+      +dot(1)*cup(2,3)*(alpha^-1*b1*sigmaBIS-c2BIS*sigmaBIS)
+      +dot(2)*cup(2,3)*(alpha^-1*b2*sigmaBIS-c1BIS)
+      +dot(3)*cup(1,2)*(-q^-1+alpha^-1*c2*sigma^-1+b2BIS+q)
+      +cross(2,3)*cup(1,2)*(-tauBIS+alphaBIS*tauBIS)
+      +cup(1,2)*(q^-1*tauBIS-alpha^-1*c2*sigma^-1*tauBIS-alpha^-1*c2*sigma^-1*sigmaBIS*tau+alpha^-1*c*sigmaBIS+b1BIS*tauBIS+bBIS-q*tauBIS)
+      +cup(2,3)*(alpha^-1*b*sigmaBIS-c2BIS*tauBIS-cBIS);
+
+   CupSlidingDotSlideLeft=
+      +dot(1)*cup(1,2)*(interchangerule(cap,dot)*q^-1*alphaBIS^-1*sigmaBIS-interchangerule(cap,dot)*alpha^-1*b1*sigmaBIS+interchangerule(cap,dot)*alphaBIS^-1*c1BIS-interchangerule(cap,dot)*q*alphaBIS^-1*sigmaBIS)
+      +dot(1)*cup(2,3)*(interchangerule(cap,dot)*alpha^-1*c2*sigmaBIS+interchangerule(cap,dot)*alphaBIS^-1*b1BIS)
+      +dot(2)*cross(2,3)*cup(1,2)*(interchangerule(cap,dot)*alpha^-1-interchangerule(cap,dot)*alphaBIS^-1)
+      +dot(2)*cup(2,3)*(interchangerule(cap,dot)*alpha^-1*c1+interchangerule(cap,dot)*alphaBIS^-1*b2BIS)
+      +dot(3)*cup(1,2)*(-interchangerule(cap,dot)*q^-1-interchangerule(cap,dot)*alpha^-1*b2+interchangerule(cap,dot)*alphaBIS^-1*c2BIS*sigma^-1*sigmaBIS^-1+interchangerule(cap,dot)*q)
+      +cup(1,2)*(interchangerule(cap,dot)*q^-1*alphaBIS^-1*tauBIS-interchangerule(cap,dot)*alpha^-1*b1*tauBIS-interchangerule(cap,dot)*alpha^-1*b-interchangerule(cap,dot)*alphaBIS^-1*c2BIS*sigma^-1*sigmaBIS^-1*tauBIS-interchangerule(cap,dot)*alphaBIS^-1*
+         c2BIS*sigma^-1*tau+interchangerule(cap,dot)*alphaBIS^-1*cBIS-interchangerule(cap,dot)*q*alphaBIS^-1*tauBIS)
+      +cup(2,3)*(interchangerule(cap,dot)*alpha^-1*c2*tauBIS+interchangerule(cap,dot)*alpha^-1*c+interchangerule(cap,dot)*alphaBIS^-1*bBIS);
